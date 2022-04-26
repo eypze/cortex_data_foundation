@@ -1,4 +1,4 @@
-project_name: "cortex_data_foundation"
+#project_name: "cortex_data_foundation"
 
 # # Use local_dependency: To enable referencing of another project
 # # on this instance with include: statements
@@ -8,18 +8,22 @@ project_name: "cortex_data_foundation"
 # }
 
 constant: CONNECTION_NAME {
-  value: "lucias-sap-bq"
+  value: "fifco-bq"
   export: override_required
 }
 
 constant: DATASET {
-  value: "SAP_REPORTING"
+  value: "CORTEX_REPORTING"
   export: override_required
 }
 
-# constant: LANGUAGE {
-#   value: "{{ _user_attributes['locale'] }}"
-# }
+constant: LANGUAGE {
+  value: "{{ _user_attributes['locale'] }}"
+}
+
+constant: sap_client_mandt {
+  value: "{{ _user_attributes['sap_client_mandt'] }}"
+}
 
 # constant: BigNumbers_format {
 #   value: "
